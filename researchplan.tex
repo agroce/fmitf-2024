@@ -39,6 +39,38 @@ has a primitive support for expressing probabilities that we plan to extend.
 % an (unpaid) ongoing research collaboration to integrate their C and
 % C++ relevant tools into DeepState as well, to support our general vision.
 
+\subsection{Pre-Trained Models to Provide Annotation Assistance}
+
+NOTE THIS IS NOT YET EDITED TO BE WHAT WE NEED, JUST GRABS REFS
+
+Modern LLMs have been pretrained on millions of source code tokens, thus these models have a strong understanding of code semantics 
+and behavior. This can be seem with CodeBERT~\cite{codebert} embeddings outperforming prior work such as Code2Vec~\cite{code2vec} 
+and TF-IDF~\cite{tfidf}, with the CodeBERT vectors capturing some
+notion of semantic similarity rather than pure token match (as in techniques 
+such as TF-IDF).  These training bases contain a large number of
+tests, with many signals including naming and structure distinguishing
+the test code within these corpuses, making
+models ``aware'' of the tightly constrained nature of test code.
+Thus one can generate entire test suites with a powerful model such as ChatGPT~\cite{gpttestgen, siddiq2023empirical}. 
+Even smaller models, trained with this relationship~\cite{catlm, starcoder} show significant promise, generating tests that compile, execute successfully, and 
+increase coverage.
+
+The context of existing production code gives LLMs more to work with,
+and the context of existing tests for production code may give LLMs
+even more to work with: LLMs can be used to augment existing tests
+with (better) oracles~\cite{OracleGEN}.  This is a particulary promising
+application, since the tendency of oracle quality to lag behind code coverage
+is an enduring and under-addressed problem in software testing~\cite{MindGap}.
+
+Another critical problem in software testing is that while developers are
+at least familliar with writing unit tests, few have experience in
+writing property-based tests or fuzz-drivers~\cite{goldstein2022some}, a different task
+that is often perceived as very difficult.  Generalizing oracle
+generation from specific to parameterized unit tests is a potential
+long-term solution to this problem, and there is already work underway
+to generate fuzz drivers using LLMs~\cite{zhang2023understanding},
+including by Google's OSS-Fuzz team, one of the most important
+industrial fuzzing efforts~\cite{ossfuzzllm}.
 
 \subsection{\textcolor{blue}{Dissemination of Software}}
 \label{sec:software}
