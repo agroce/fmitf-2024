@@ -1,0 +1,95 @@
+% \subsubsection{Communication Protocol for Wireless Sensor Nodes in SEGA}
+% \label{sec:sega-case-study}
+
+% \paragraph{Overview:}
+
+% SEGA is a large collection of operational wireless sensor/actuator networks for monitoring and control of ecological systems, located at 17 sites in the states of Arizona and California.
+% Currently, SEGA consists of 138 wireless nodes and is planned to expand to a total of 154 nodes at 21 sites in the coming years.
+% As a genetics-based climate change research platform, SEGA allows scientists to quantify the ecological and evolutionary responses of species to changing climate conditions.
+% Multiple long-term and large-scale scientific experiments are conducted at SEGA sites.
+% The SEGA project was led by NAU, and the group of co-PI Flikkema developed and are maintaining the wireless nodes, including their embedded software.
+% %
+% The SEGA nodes use a multi-processor architecture, in which a central processor provides OS-level services %, including scheduling and dispatch of tasks, storage, and a message-passing interface for wireless networking.
+% while plug-in satellite processors handle transducer sampling, actuation, and related computational tasks.
+% In addition to allowing true parallelism, this architecture enables hardware-level improvements in energy efficiency, since each satellite can be optimized for its specific task.
+% % The current implementation of the architecture emphasizes energy efficiency~\cite{FliSENSORS2010,FliICC2011}.
+% % For example, all satellite processors are power-gated via central processor control; ensuring that satellite processors are depowered prevents satellite sleep-mode energy leakage.
+% % The power subsystem provides multiple power buses at different voltages, including an optically-isolated high-power bus for actuation.
+% % A variety of energy supplies are also supported, including battery-backed photo-voltaic sources~\cite{FliEtAl12,KnaFli17}.
+% %
+% The nodes synchronously interact with neighbors in a multi-hop, self-organizing/healing network, implemented by a custom communication protocol designed by the group of co-PI Flikkema. %; synchronization is implemented as scheduled rendezvous in time slots; slot boundaries are managed by a lightweight global time synchronization protocol that is integrated with low-level communication synchronization.
+% The nodes use a custom time-triggered RTOS tightly integrated with a time/frequency-hopped PHY/MAC protocol.
+% This approach %, implemented using a time-triggered architecture on a custom RTOS,
+% minimizes communication energy cost.
+% \paragraph{Challenges:}
+
+% Because timing is critical and is determined by the embedded system hardware and software, most testing has occurred at the network level, with extensive in-lab testing with small networks and instrumented field tests.
+% However, it has been found in long-term deployments % (at dozens of field sites over years of operation)
+% that occasionally the networking fails and nodes become isolated---we think due to a complex set of subtle bugs rooted in different levels of timing abstraction.
+% When such a failure occurs, it often spreads from one node to others, causing nodes to seek to rejoin and expend high levels of energy for radio operation and eventually deplete their energy sources.
+% Eventually, subnets, or sometimes the entire site, are disabled and humans must visit the site to reboot it.
+% Such failures could %cause scientific data to be lost or invalidated and, even worse, could
+% affect %damage
+% or even destroy (e.g., via over-watering), long-running scientific experiments.
+% %
+% We aim to use SEGA (in particular the protocol in question and its implementation) as our case study.
+% This will enable us to apply our approach in a practical setting, and ensure that what we produce is actually usable by engineers of real systems.
+% %
+% SEGA is an ideal case study for several reasons.
+% First, the above mentioned network problem enables exploring how to design, prove, and test time-critical systems in a way that does no harm: human life is not affected in this application, and data is not lost since all sensed information is logged as a local back-up.
+% On the other hand, reliable operation is important. %, and failure costly. %, because access to manually fix problems can be problematic even with current installations, and in the future this problem will only grow.
+% Finally, this application uses common data structures for task control blocks, and the operating system at each node schedules and dispatches both periodic and pseudo-randomly scheduled tasks.
+
+
+
+% \paragraph{Plan:}
+% %%%%%%%%% How will we carry out this case study?
+
+% Following our proposed workflow, we will first annotate the implementation with specifications of correctness properties.  We may model the protocol itself as a timed automaton in \uppaal or \prism, in order to ensure that there is not a subtle flaw in the protocol itself, and to model our expectations of behavior in the real system (and to better understand needed specifications).
+% Either of these steps may expose the source of the mysterious networking failures.
+% We will use DeepState, driven by harnesses automatically generated by our tools, to generate tests of the implementation components in question, using fuzzing at first, followed by CBMC and SPIN model checking once prototype back-ends are available.
+% For the purpose of verification and testing, the uncertainty inherent in the physical environment and in wireless communication will be modeled by probabilistic timed automata.
+% %DeepState testing may expose faults that are not part of the specification.
+% % TRUONG: I commented out the following sentences because they are general (why we want to complement \framac with DeepState), therefore they should be included in the general discussion of the workflow.
+% %
+% %For instance, using libFuzzer with DeepState we can use LLVM's Undefined Behavior sanitized to catch some classes of undefined behavior that \framac does not take into account.  Furthermore, \framac's ability to prove properties about interactions of multiple functions operating in arbitrary sequence is often limited; such proofs are notoriously hard to construct in general.  DeepState allows us to hope to detect faults when we cannot prove correctness.  DeepState's ability to use symbolic execution as a back-end will be most useful for verifying single functions that are hard to verify with \framac, while state-of-the-art fuzzers will be most useful for sets of functions, or cases where symbolic execution fails to scale.
+% %
+% The above workflow will be conducted by an Embedded System Engineering student, who is familiar with the SEGA IoT system but does not have expertise in software verification and testing, using the software tools developed in this project.
+% Feedback from the engineer in this case study will inform us how to develop and improve the theory and tools for practical usage.
+
+
+\subsubsection{Case Study 1: Embedded Software of Wireless Sensor Nodes in DISCOVER}
+\label{sec:case-study:DISCOVER}
+
+\paragraph{Overview and challenges:}
+As a community research platform, DISCOVER will allow users, who are researchers in relevant field domains, to develop software code and experiments for the DISCOVER stationary nodes (i.e., sensor nodes) and mobile nodes (i.e., terrestrial robots and drones).
+A critical step of the process supported by DISCOVER is automatic verification and testing of the embedded code submitted by users for live experiments.
+We expect that submitted code is developed by researchers who are not trained in computer science and who do not usually apply best practices in software engineering.
+We also expect that submitted code will have a wide spectrum of code quality and may be malicious, either by chance or intentionally.
+Automatic functional testing of user code will therefore be of critical importance for the operation and sustainability of DISCOVER.
+Another challenge is the fact that the code to be tested and verified is for embedded systems that have highly complex physical dynamics %(in the case of robots) 
+and interactions with the physical world and with other physical systems, and are constrained by limited computing power and energy.
+In addition, wireless communication in a WSN is often subject to frequent packet drops and other failures.
+Such physical aspects cannot be easily described in code for the purpose of software verification and testing.
+Therefore, sophisticated software-based and hardware-in-the-loop simulations %, including embedded hardware emulators and robot simulators, 
+are necessary, for which several options will be developed by the DISCOVER team.
+
+\paragraph{Plan:}
+Following our proposed workflow, we will first annotate the implementation with specifications of correctness properties.
+%We may model the protocol itself as a timed automaton in \uppaal or \prism, in order to ensure that there is not a subtle flaw in the protocol itself, and to model our expectations of behavior in the real system (and to better understand needed specifications).
+% Either of these steps may expose the source of the mysterious networking failures.
+We will use DeepState, driven by harnesses automatically generated by our tools, to generate tests of the implementation components in question, using fuzzing at first, followed by CBMC and SPIN model checking once prototype back-ends are available.
+For the purpose of verification and testing, the uncertainty inherent in the physical environment and in wireless communication will be modeled by probabilistic timed automata.
+%DeepState testing may expose faults that are not part of the specification.
+% TRUONG: I commented out the following sentences because they are general (why we want to complement \framac with DeepState), therefore they should be included in the general discussion of the workflow.
+%
+%For instance, using libFuzzer with DeepState we can use LLVM's Undefined Behavior sanitized to catch some classes of undefined behavior that \framac does not take into account.  Furthermore, \framac's ability to prove properties about interactions of multiple functions operating in arbitrary sequence is often limited; such proofs are notoriously hard to construct in general.  DeepState allows us to hope to detect faults when we cannot prove correctness.  DeepState's ability to use symbolic execution as a back-end will be most useful for verifying single functions that are hard to verify with \framac, while state-of-the-art fuzzers will be most useful for sets of functions, or cases where symbolic execution fails to scale.
+%
+The above workflow will be conducted by an Embedded System Engineering student, who is familiar with the DISCOVER wireless sensor nodes but does not have expertise in software verification and testing, using the software tools developed in this project.
+Feedback from the engineer in this case study will inform us how to develop and improve the theory and tools for practical usage.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

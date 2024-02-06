@@ -1,0 +1,43 @@
+\definecolor{commentcolor}{rgb}{0.7,0.7,0.7}
+
+\lstdefinelanguage{ACSL}{%
+  morekeywords={[2]assert,assigns,assumes,axiom,axiomatic,behavior,behaviors,
+    boolean,breaks,complete,continues,data,decreases,disjoint,ensures,
+    exit_behavior,ghost,global,inductive,integer,invariant,lemma,logic,loop,
+    model,predicate,reads,real,requires,sizeof,strong,struct,terminates,type,%returns
+    union,variant,writes,\\nothing,\\valid,\\result,\\forall,\\exists,integer,\\separated,\\valid_read,\\list},
+  alsoletter={\\},
+  morecomment=[l]{//},
+  moredelim=*[s][\color{black}]{/*@}{*/}
+}
+
+
+\lstdefinestyle{c}{language={[ANSI]C},%
+  alsolanguage=ACSL,%
+  commentstyle=\lp@comment,%
+  moredelim={*[l]{//}},%
+  %deletecomment={[s]{/*}{*/}},
+  moredelim={*[l][\color{black}]{//@}},%
+}
+
+
+\lstset{
+    escapeinside={\%*}{*)},
+    language=C,
+    style=c,
+    alsolanguage=ACSL,
+    basicstyle=\ttfamily,
+    commentstyle=\itshape\color{commentcolor},
+    keywordstyle={\bfseries\color{black}},
+    keywordstyle=[2]{\bfseries\color{black}},
+    showstringspaces=false,
+    stringstyle={\rmfamily\color{gray}},
+    %frame=single,
+    columns=flexible,
+    aboveskip=6pt,
+    belowskip=6pt,
+    mathescape=true,
+    breaklines=true
+}
+
+\lstMakeShortInline"

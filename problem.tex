@@ -1,0 +1,89 @@
+Sophisticated embedded systems can be found in many safety-critical systems, such as automobiles, airplanes, and medical devices.
+Ensuring the correctness and reliability of these systems is crucial to avoid potentially catastrophic consequences, for which disparate methods and tools have been developed.
+The \textbf{core problem} we aim to address in this proposal is that \textbf{use of formal modeling, advanced static analysis, and advanced dynamic analysis for verification and validation, especially on critical embedded systems, is prohibitively difficult and lacks sufficient synergy for cost-effective application}.
+This is true even of systems built in an academic research context: that is, unless the research is primarily \emph{about} methods for verifying and testing systems, rather than work on an embedded system for its own sake, these methods are hard to apply.
+Furthermore, even when use of these techniques to ensure correctness, reliability, or security is a focus of the project, such use is almost always limited to one type of effort---model checking, theorem proving, or automated test generation.
+A major cause for this difficulty is the lack of synergy between these related efforts, that is the failure of effort in one context to transfer to another context.
+In short:
+
+\begin{itemize}[labelsep=3pt,leftmargin=12pt]
+\item Learning to use a formal modeling language and tool
+  % , such as \uppaal~\cite{uppaal}, \prism~\cite{KNP2011:CAV}, or \spin~\cite{SPIN},
+ provides help in discovering defects in a high-level model or protocol, but seldom helps with implementation-level bugs not thus modeled.
+\item Many static analysis tools are primarily ``bug detectors'' (e.g, Coverity or CodeSonar), whose output is essentially limited to a list of possible problems; devising test inputs to reject false positives is hard.
+\item More powerful static analysis tools, such as \framac~\cite{KKP2015:FAC}, provide proofs of correctness for limited aspects of a system, and a rich specification and annotation language.  However, there is little or no connection between this annotation and either formal modeling or state-of-the-art test generation.
+\item There are a large variety of automated test generation tools; however, effort spent learning one tool only partially transfers to another tool.  Many tools, e.g., AFL~\cite{aflfuzz}, focus on finding crashes, and do not leverage  other types of specification.
+\end{itemize}
+
+Consider the case of an embedded systems engineer working on a custom, low-energy consumption, communication protocol for use in a network of low-power sensors and actuators.  If she builds a formal model of the protocol, she will likely find that this extensive effort provides no help, other than an improved concept of the system, in proving the correctness of her implementation.  If she begins instead by building an automated test generation harness she will find that, despite having spent considerable time expressing pre-conditions and post-conditions for various functions in the implementation, the work must be duplicated when she decides to try to formally prove the correctness of core functionality.  Had she begun with proofs, again, logically related (or even equivalent) information would have to be re-expressed, in a different language, to perform test generation.  Effort spent in using one tool almost never carries over to another approach.  There is simply not enough time or energy available to make use of the available technology.  Consequently, in practice, no advanced correctness technology may be used at all.  Since it is hard to predict which one(s) will have the greatest payoff, or will even work, perhaps it is best to just focus on manual testing.
+
+
+\paragraph{Proposed Solution:}
+The overarching goal of this project is to develop a \textbf{practical approach for verifying and validating real-world embedded systems}.
+This consists of \emph{novel methods for combining formal, static, and dynamic analysis} as well as an \emph{open-source software implementation} of these methods.
+In addition, case studies of real-world embedded systems in different application domains will be conducted to evaluate the effectiveness and practicality of the developed methods and tools.
+
+% Methodology / Approach:
+While allowing efforts from any form of formal or automated verification or validation attempt to carry over to other forms %(e.g., formal models to code annotations for static analysis, code annotations to test harnesses, test harnesses to formal models, formal models to test harnesses, etc.)
+is the ideal goal, simply making it possible to follow one critical path to combine methods is feasible and desirable.
+%
+Which path is most important to realize?  Our approach is based in the reality of the embedded systems domain, where, while formal modeling is sometimes used, there is %, in real-world efforts, 
+always an implementation.  The most basic obstacle to the adoption of formal methods in embedded systems is that if there is only the usual informal design effort or the adaptation of a legacy implementation, formal methods are often inapplicable.  By focusing on adding annotations to implementation code, and exploiting those annotations to enable analyses, we promise to always give embedded systems engineers a reasonable payoff.
+
+This project proposes to make it possible to introduce specifications into implementation code that can be directly checked using sophisticated automated test generation strategies, including symbolic execution, fuzzing,  and model checking.   Furthermore, these specifications can be directly exported to form the basis for formal models using, e.g., timed automata.  In the long run, to benefit those developers who are more open to formal methods already, we expect that these annotations can also be imported from a timed automata representation, but we begin where most embedded systems developers are, now, not where we hope they may be, someday.
+We additionally focus on using frameworks/front-ends allowing application of multiple approaches.  Our commitment is to enabling \textbf{a maximum diversity of analysis methods} with \textbf{a minimum of specification and tool-learning effort}, to \textbf{make formal methods attractive in terms of cost-benefit ratio}.
+
+This project is specifically focused on embedded and networked systems, but we anticipate that our solution will generalize to other application domains with similar characteristics and challenges.
+We expect developers to learn new tools, but not new programming paradigms or languages.  The proposed contribution to embedded systems design is not a radical reworking of development methods, which, like many formal methods efforts in the past, would be unlikely to achieve widespread adoption, but the introduction of \emph{an advanced form of unit testing} that works with, e.g., legacy code, with more powerful methods for specification and checking of correctness. This will modify development, in that design-for-testability and design-for-verifiability will become second nature.  This project is therefore based on the following core ideas:
+
+\noindent\fbox{%
+  \bf
+    \parbox{0.972\textwidth}{%
+  \begin{enumerate}
+  \item The primary obstacle to adoption of formal methods approaches in embedded systems development is not a lack of relevant methods and tools.
+  \item In particular, there are methods and tools that apply to the \emph{implementation} of embedded systems in C and C++; every embedded software system requires an implementation.
+  \item However, learning and using any one of these tools may or may not ``pay off'' and the effort spent is only of limited application when applying another tool.
+  \item Therefore, to improve embedded systems development via formal methods we need a comprehensive approach with:
+    \begin{enumerate} \item an \emph{implementation-focused} \emph{common framework} for applying methods and tools, and
+    \item a focus on \emph{practically-inspired} improvements to methods and tools.
+      \end{enumerate}
+  \end{enumerate}
+}
+}
+
+\paragraph{Case study applications:}
+\label{sec:field-applications}
+The proposed research is motivated by applications in embedded and networked systems, in particular wireless sensor networks and multi-robot systems.
+A wireless sensor network (WSN) consists of multiple, often many, sensor nodes that communicate via a wireless network with servers and/or other sensor nodes.
+In a WSN, each sensor monitors some physical quantities, such as air temperature, humidity, and CO$_{2}$ concentration level, and exchanges its measurement data with other entities %central servers or with other sensors
+for specific objectives, such as for monitoring and forecasting wildfires.
+Each sensor node typically has some limited computing power (an embedded microprocessor) and limited energy provided by a battery and/or a renewable energy source.
+Furthermore, wireless communication in a WSN is often subject to frequent %uncertainty such as
+packet drops and other failures.
+Consequently, some of the major challenges for the reliability and correctness of WSNs include timing and communication uncertainty, and computing and energy constraints.
+In addition, testing and verifying  code for sensor nodes faces another significant hurdle due to the nature of interacting directly with the physical world, which involves another level of uncertainty and is not always easily replicable in a software testing or verification tool.
+%
+A multi-robot system (MRS) consists of multiple robots, possibly of different types such as terrestrial robots and aerial drones, which coordinate to perform certain tasks, such as package delivery, disaster rescue, and surveillance.
+An MRS carries similar major challenges as a WSN.
+% While their computing power and energy are often less constrained,
+Due to the complexity of their dynamics and interactions with the physical world, testing and verifying software for robots, especially cooperative robots in an MRS, is particularly challenging.
+%
+In summary, this project focuses on three %following
+major challenges of these representative applications % domains 
+of embedded and networked systems:
+(1) timing and communication uncertainty,
+(2) complex dynamic behaviors, and
+(3) interactions with the physical world.
+Real-world case studies will be used for validating and demonstrating our proposed approach.
+% They will be addressed by a combination of approaches, from both the formal method and software testing disciplines and the field application disciplines.
+% Case studies in real-world WSNs and MRS, which are representative of embedded and networked systems and their challenges, will be used for validating and demonstrating our proposed solution.
+
+\subsection{PI Qualifications}
+
+See the collaboration plan for an extensive examination of PI Qualifications.  In brief, PI Groce has extensive history with formal methods and testing tool development, and practical application to real-world embedded systems.  Co-PI Nghiem is an expert in control and autonomy for robotics, including use of formal methods, and has extensive experience with deployed real-world embedded systems and networks.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

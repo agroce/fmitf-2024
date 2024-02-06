@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+% -------------------------------------------------
+% The standard LaTeX font is Computer Modern. Here, we will load the New
+% Century Schoolbook font instead. 
+%\usepackage{newcent}
+% Other popular options are (name followed by code)
+% - Times:
+\usepackage{mathptmx}  % **
+% - Palatino / Palladio: or \usepackage{tgpagella}
+%\usepackage[sc]{mathpazo}  % **
+%\linespread{1.05}         % Palladio needs more leading (space between lines)
+% - Kp-fonts:
+%\usepackage{kpfonts}  % *
+% - GFS Didot:
+%\usepackage{gfsdidot} % **
+% - Utopia:
+%\usepackage[utopia]{mathdesign} % *
+% - Venturis:
+%\usepackage{venturis} % **
+% - Libertine:
+%\usepackage{libertine} % **
+% - Bitstream Vera / Dejavu:
+% \usepackage{dejavu} % *
+
+\usepackage[in]{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+% -------------------------------------------------
+\begin{document}
+
+\noindent{\large \bf Truong X. \textsc{Nghiem}}
+
+\paragraph{(a) Professional Preparation} ~
+
+~
+
+\noindent
+\begin{tabular}{lllll}
+  Hanoi University of Technology & Hanoi, Vietnam & Automatic Control & B.S. & 2003 \\[3pt]
+  University of Pennsylvania & Philadelphia, PA & Electrical \& Systems Engineering & Ph.D. & 2012 \\[3pt]
+\end{tabular} 
+
+% A list of the individual’s undergraduate and graduate education and postdoctoral training (including location) as indicated below:
+
+% Undergraduate Institution(s)     Location    Major    Degree & Year
+
+% Graduate Institution(s)          Location    Major    Degree & Year
+
+% Postdoctoral Institution(s)      Location    Area     Inclusive Dates (years)
+
+\paragraph{(b) Appointments} ~
+
+~
+% A list, in reverse chronological order, of all the individual's academic/professional appointments beginning with the current appointment.
+
+\noindent
+\begin{tabular}{llll}
+  Northern Arizona University & Flagstaff, AZ    & Assistant Professor            & Jan 2018 -- now      \\[3pt]
+  University of Pennsylvania & Philadelphia, PA & Postdoc Researcher & Jun -- Dec 2017 \\[3pt]
+  EPFL & Lausanne, Switzerland & Postdoc Scientist & Jan 2015 -- Jun 2017 \\[3pt]
+  University of Pennsylvania & Philadelphia, PA & Postdoc Researcher & Oct 2012 -- Dec 2014 \\[3pt]
+  University of Pennsylvania & Philadelphia, PA & Research Assistant &  2005 -- 2012 \\[3pt]
+  NEC Laboratories America & Princeton, NJ & Summer  Intern & Jun -- Sep 2008 \\[3pt]
+  Hanoi University of Technology & Hanoi, Vietnam & Lecturer & 2003 -- 2005
+\end{tabular}
+
+
+\paragraph{(c) Products} ~
+
+~
+
+
+\noindent{\it (i) Products related to the Proposed Project}
+
+%\nocite{BKL2018:NFM,LBK2018:TAP,BLK2017:VPT,BKL2016:SCAM,BKL2015:FMICS}
+
+
+\begin{enumerate}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\item Sriram Sankaranarayanan, Franjo Ivancic, Aarti Gupta, and Truong X.\ Nghiem.  \newblock {U.S. Patent: System and method for feedback-guided test generation for Cyber-physical Systems using Monte-Carlo}.  \newblock
+  Patent number:
+  \ifdefined\href
+  \href{http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/search-bool.html&r=1&f=G&l=50&d=PALL&RefSrch=yes&Query=PN/8374840}{US 8,374,840 B2}.
+  \else
+  US 8,374,840 B2.
+  \fi
+  \newblock Patent grant date: February 12, 2013.
+
+\item Truong X. Nghiem, Sriram Sankaranarayanan, Georgios Fainekos, Franjo Ivancic, Aarti Gupta, and George J. Pappas.
+  \newblock {Monte-Carlo Techniques for Falsification of Temporal Properties of Non-Linear Hybrid Systems}.
+  \newblock In \emph{Proceedings of the 13th {{ACM}} International Conference on {{Hybrid}} Systems: Computation and Control ({{HSCC}})}, pages 211-220. Springer, Apr 2010.
+  \newblock \doi{10.1145/1755952.1755983}.
+      
+\item Yash Vardhan Pant, Kartik Mohta, Houssam Abbas, Truong X. Nghiem, Joseph Devietti, and Rahul Mangharam.  \newblock {Co-{{Design}} of {{Anytime Computation}} and {{Robust Control}}}.  \newblock In \emph{Proceedings of the {{IEEE Real}}-{{Time Systems Symposium}} ({{RTSS}})}. IEEE, Dec 2015.
+  
+\item Truong X. Nghiem, George J. Pappas, Rajeev Alur, and Antoine Girard.
+  \newblock {Time-Triggered Implementations of Dynamic Controllers}.
+  \newblock In \emph{ACM Transactions in Embedded Computing Systems}, vol.~11, pages 58:1-24.
+  Aug 2012.
+\end{enumerate}
+
+\noindent{\it (ii) Other Significant Products} ~
+
+\begin{enumerate}
+  
+  \providecommand{\natexlab}[1]{#1}
+  \providecommand{\url}[1]{\texttt{#1}}
+  \expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\item Achin Jain, Truong X. Nghiem, Manfred Morari, and Rahul Mangharam.
+  \newblock {Learning and {{Control}} Using {{Gaussian Processes}}: {{Towards}} Bridging Machine Learning and Controls for Physical Systems}.
+  \newblock In \emph{International {{Conference}} on {{Cyber}}-{{Physical Systems}} ({{ICCPS}})}.  Apr 2018.
+  \newblock \doi{ICCPS.2018.00022}.
+
+\item Truong X. Nghiem, Georgios Stathopoulos, and Colin Jones.
+  \newblock {Learning {{Proximal Operators}} with {{Gaussian Processes}}}.
+  \newblock In \emph{Annual {{Allerton Conference}} on {{Communication}}, {{Control}}, and {{Computing}}}.
+  Oct 2018.
+
+\item Truong X. Nghiem and Colin N. Jones.
+  \newblock {Data-Driven Demand Response Modeling and Control of Buildings with {{Gaussian Processes}}}.
+  \newblock In \emph{Proceedings of the 2017 {{American Control Conference}} ({{ACC}})}, pages 2919-2924.  May 2017.
+  \newblock \doi{10.23919/ACC.2017.7963394}.
+  
+\item Truong X. Nghiem and Rahul Mangharam.
+  \newblock {Scalable {{Scheduling}} of {{Energy Control Systems}}}.
+  \newblock In \emph{Proceedings of the {{ACM}} \& {{IEEE International}} Conference on {{Embedded}} Software ({{EMSOFT}})}, pages 137--146.   Oct 2015.
+  \newblock \doi{10.1109/EMSOFT.2015.7318269}.
+
+\item Truong X. Nghiem and George J. Pappas.
+  \newblock {Receding-Horizon Supervisory Control of Green Buildings}.
+  \newblock In \emph{Proceedings of the {{American Control Conference}}}, pages 4416-4421.  Jun 2011.
+
+\end{enumerate}
+
+% A list of: (i) up to five products most closely related to the
+% proposed project; and (ii) up to five other significant products,
+% whether or not related to the proposed project. Acceptable products
+% must be citable and accessible including but not limited to
+% publications, data sets, software, patents, and
+% copyrights. Unacceptable products are unpublished documents not yet
+% submitted for publication, invited lectures, and additional lists of
+% products. Only the list of ten will be used in the review of the
+% proposal.
+
+% Each product must include full citation information including (where
+% applicable and practicable) names of all authors, date of publication
+% or release, title, title of enclosing work such as journal or book,
+% volume, issue, pages, website and URL or other Persistent Identifier.
+
+% If only publications are included, the heading "Publications" may be
+% used for this section of the Biographical Sketch.
+
+\paragraph{(d) Synergistic Activities}
+
+% A list of up to five examples that demonstrate the broader impact of
+% the individual’s professional and scholarly activities that focuses on
+% the integration and transfer of knowledge as well as its
+% creation. Examples could include, among others: innovations in
+% teaching and training (e.g., development of curricular materials and
+% pedagogical methods); contributions to the science of learning;
+% development and/or refinement of research tools; computation
+% methodologies, and algorithms for problem-solving; development of
+% databases to support research and education; broadening the
+% participation of groups underrepresented in STEM; and service to the
+% scientific and engineering community outside of the individual’s
+% immediate organization.
+
+\begin{enumerate}
+\item Member of the IEEE Technical Committee on Cyber-Physical Systems since 2018.
+\item Chair of the session ``Verification and Analysis of Hybrid Systems'' at the 2015 {ACM} \& {IEEE} International Conference on Embedded Software ({EMSOFT}).
+\item New course ESE~680 ``Digital Twins: Model Based Embedded Systems'' at the University of Pennsylvania in 2017.
+\item Presenter on robotics at Flagstaff Coding Camps 2018 for school children, and panelist at the Flagstaff Festival of Science 2018.
+\item Research software: main developer of the research software MLE+ for building energy simulation, analysis, optimization and control;  main developer of the research software OpenBuildNet -- a co-simulation platform for large-scale distributed control and simulation of complex multi-agent cyber-physical systems.
+\end{enumerate}
+
+
+% ;;; Local Variables: ***
+% ;;; eval: (ispell-change-dictionary "english" nil) ***
+% ;;; mode: latex ***
+% ;;; eval: (flyspell-buffer) ***
+% ;;; End: ***
+
+%\bibliography{bibliography}
+%\bibliographystyle{unsrtnat}
+
+\end{document}

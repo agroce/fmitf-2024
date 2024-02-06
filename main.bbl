@@ -1,0 +1,524 @@
+\begin{thebibliography}{10}
+
+\bibitem{KKP2015:FAC}
+Florent Kirchner, Nikolai Kosmatov, Virgile Prevosto, Julien Signoles, and
+  Boris Yakobowski.
+\newblock {F}rama-{C}: {A} software analysis perspective.
+\newblock {\em Formal Asp. Comput.}, 27(3):573--609, 2015.
+
+\bibitem{aflfuzz}
+Michal Zalewski.
+\newblock american fuzzy lop (2.35b).
+\newblock \url{http://lcamtuf.coredump.cx/afl/}, November 2014.
+
+\bibitem{DeepState}
+Peter Goodman and Alex Groce.
+\newblock {DeepState}: Symbolic unit testing for {C} and {C++}.
+\newblock In {\em NDSS Workshop on Binary Analysis Research}, 2018.
+
+\bibitem{AD1994:TCS}
+Rajeev Alur and David~L. Dill.
+\newblock A theory of timed automata.
+\newblock {\em Theor Comput Sci}, 126(2):183 -- 235, 1994.
+
+\bibitem{BLM2017:LNCS}
+Patricia Bouyer, Fran{\c{c}}ois Laroussinie, Nicolas Markey, Jo{\"{e}}l
+  Ouaknine, and James Worrell.
+\newblock Timed temporal logics.
+\newblock In {\em Models, Algorithms, Logics and Tools - Essays Dedicated to
+  Kim Guldstrand Larsen on the Occasion of His 60th Birthday}, volume 10460 of
+  {\em LNCS}, pages 211--230. Springer, 2017.
+
+\bibitem{meeting}
+Alastair Reid, Luke Church, Shaked Flur, Sarah de~Haas, Maritza Johnson, and
+  Ben Laurie.
+\newblock Towards making formal methods normal: meeting developers where they
+  are, 2020.
+
+\bibitem{uppaal}
+Johan Bengtsson, Kim Larsen, Fredrik Larsson, Paul Pettersson, and Wang Yi.
+\newblock Uppaal—a tool suite for automatic verification of real-time
+  systems.
+\newblock In {\em International Hybrid Systems Workshop}, pages 232--243.
+  Springer, 1995.
+
+\bibitem{KNP2011:CAV}
+M.~Kwiatkowska, G.~Norman, and D.~Parker.
+\newblock {PRISM} 4.0: Verification of probabilistic real-time systems.
+\newblock In {\em Proc. 23rd International Conference on Computer Aided
+  Verification (CAV'11)}, volume 6806 of {\em LNCS}, pages 585--591. Springer,
+  2011.
+
+\bibitem{ACSL}
+Patrick Baudin, Jean~C. Filli\^{a}tre, Thierry Hubert, Claude March\'{e},
+  Benjamin Monate, Yannick Moy, and Virgile Prevosto.
+\newblock {\em {ACSL}: {ANSI/ISO} C Specification Language}, February 2011.
+\newblock \url{http://frama-c.cea.fr/acsl.html}.
+
+\bibitem{jml}
+Gary~T. Leavens, Albert~L. Baker, and Clyde Ruby.
+\newblock {JML}: a {Java Modeling Language}.
+\newblock In {\em Formal Underpinnings of Java Workshop (at OOPSLA '98)},
+  October 1998.
+\newblock {\tt http://www-dse.doc.ic.ac.uk/{\char'176}sue/oopsla/cfp.html}.
+
+\bibitem{cousot77}
+Patrick Cousot and Radhia Cousot.
+\newblock Abstract interpretation: a unified lattice model for static analysis
+  of programs by construction or approximation of fixpoints.
+\newblock In {\em Proc. of the 4th {ACM} Symposium on Principles of Programming
+  Languages ({POPL} 1977)}, pages 238--252. {ACM}, 1977.
+
+\bibitem{BLK2019:NFM}
+Allan Blanchard, Fr\'{e}d\'{e}ric Loulergue, and Nikolai Kosmatov.
+\newblock {Towards Full Proof Automation in Frama-C using Auto-Active
+  Verification}.
+\newblock In {\em Nasa Formal Methods}, LNCS, pages 88--105. Springer, 2019.
+
+\bibitem{CR2006:SEN}
+Lori~A. Clarke and David~S. Rosenblum.
+\newblock A historical perspective on runtime assertion checking in software
+  development.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 31(3):25--37, May 2006.
+
+\bibitem{WilliamsMMR05EDCC}
+N.~Williams, B.~Marre, P.~Mouy, and M.~Roger.
+\newblock {PathCrawler}: automatic generation of path tests by combining static
+  and dynamic analysis.
+\newblock In {\em {EDCC}}, 2005.
+
+\bibitem{GodefroidKS05}
+Patrice Godefroid, Nils Klarlund, and Koushik Sen.
+\newblock {DART:} directed automated random testing.
+\newblock In {\em Programming Language Design and Implementation}, pages
+  213--223, 2005.
+
+\bibitem{MCDC}
+{RTCA Special Committee 167}.
+\newblock Software considerations in airborne systems and equipment
+  certification.
+\newblock Technical Report DO-178-B, RTCA, Inc., 1992.
+
+\bibitem{DeepStateTutorial}
+Peter Goodman, Gustavo Greico, and Alex Groce.
+\newblock Tutorial: {DeepState}: Bringing vulnerability detection tools into
+  the development cycle.
+\newblock In {\em IEEE Cybersecurity Development Conference (SECDEV)}, 2018.
+
+\bibitem{JUnit}
+Eric Gamma and Kent Beck.
+\newblock {JUnit} 5.
+\newblock \url{http://junit.org/junit5/}.
+
+\bibitem{GoogleTest}
+Google {Test}.
+\newblock \url{https://github.com/google/googletest}, 2008.
+
+\bibitem{ParamUnit}
+Nikolai Tillmann and Wolfram Schulte.
+\newblock Parameterized unit tests.
+\newblock In {\em ACM SIGSOFT International Symposium on Foundations of
+  Software Engineering}, pages 253--262, 2005.
+
+\bibitem{angr1}
+Yan Shoshitaishvili, Ruoyu Wang, Christopher Salls, Nick Stephens, Mario
+  Polino, Audrey Dutcher, John Grosen, Siji Feng, Christophe Hauser,
+  Christopher Kruegel, and Giovanni Vigna.
+\newblock Sok: (state of) the art of war: Offensive techniques in binary
+  analysis.
+\newblock In {\em IEEE Symposium on Security and Privacy}, 2016.
+
+\bibitem{angr2}
+Nick Stephens, John Grosen, Christopher Salls, Audrey Dutcher, Ruoyu Wang,
+  Jacopo Corbetta, Yan Shoshitaishvili, Christopher Kruegel, and Giovanni
+  Vigna.
+\newblock Driller: Augmenting fuzzing through selective symbolic execution.
+\newblock In {\em Network and Distributed System Security Symposium}, 2016.
+
+\bibitem{angr3}
+Yan Shoshitaishvili, Ruoyu Wang, Christophe Hauser, Christopher Kruegel, and
+  Giovanni Vigna.
+\newblock Firmalice - automatic detection of authentication bypass
+  vulnerabilities in binary firmware.
+\newblock In {\em NDSS}, 2015.
+
+\bibitem{Manticore}
+Mark Mossberg, Felipe Manzano, Eric Hennenfent, Alex Groce, Gustavo Grieco,
+  Josselin Feist, Trent Brunson, and Artem Dinaburg.
+\newblock Manticore: {A} user-friendly symbolic execution framework for
+  binaries and smart contracts.
+\newblock In {\em 34th {IEEE/ACM} International Conference on Automated
+  Software Engineering, {ASE} 2019, San Diego, CA, USA, November 11-15, 2019},
+  pages 1186--1189. {IEEE}, 2019.
+
+\bibitem{libFuzzer}
+Kostya Serebryany.
+\newblock Continuous fuzzing with libfuzzer and addresssanitizer.
+\newblock In {\em Cybersecurity, Development (SecDev), IEEE}, pages 157--157.
+  IEEE, 2016.
+
+\bibitem{eclipser}
+Jaeseung Choi, Joonun Jang, Choongwoo Han, and Sang~Kil Cha.
+\newblock Grey-box concolic testing on binary code.
+\newblock In {\em International Conference on Software Engineering}, pages
+  736--747, 2019.
+
+\bibitem{angora}
+Peng Chen and Hao Chen.
+\newblock Angora: Efficient fuzzing by principled search.
+\newblock In {\em 2018 IEEE Symposium on Security and Privacy (SP)}, pages
+  711--725, 2018.
+
+\bibitem{Honggfuzz}
+honggfuzz.
+\newblock \url{https://github.com/google/honggfuzz}, 2010.
+
+\bibitem{ClaessenH00}
+Koen Claessen and John Hughes.
+\newblock {QuickCheck}: a lightweight tool for random testing of {Haskell}
+  programs.
+\newblock In {\em International Conference on Functional Programming}, pages
+  268--279, 2000.
+
+\bibitem{ScalaCheckDoc}
+Rickard Nilsson, Shane Auckland, Mark Sumner, and Sanjiv Sahayam.
+\newblock {ScalaCheck} user guide.
+\newblock
+  \url{https://github.com/rickynils/scalacheck/blob/master/doc/UserGuide.md},
+  September 2016.
+
+\bibitem{Hypothesis}
+David~R. MacIver.
+\newblock Hypothesis: Test faster, fix more.
+\newblock \url{http://hypothesis.works/}, March 2013.
+
+\bibitem{NFM15}
+Alex Groce and Jervis Pinto.
+\newblock A little language for testing.
+\newblock In {\em NASA Formal Methods Symposium}, pages 204--218, 2015.
+
+\bibitem{tstlsttt}
+Josie Holmes, Alex Groce, Jervis Pinto, Pranjal Mittal, Pooria Azimi, Kevin
+  Kellar, and James O'Brien.
+\newblock {TSTL:} the template scripting testing language.
+\newblock {\em International Journal on Software Tools for Technology
+  Transfer}, 20(1):57--78, February 2018.
+
+\bibitem{Pex}
+Nikolai Tillmann and Jonathan De~Halleux.
+\newblock Pex--white box test generation for {.NET}.
+\newblock In {\em Tests and Proofs}, pages 134--153, 2008.
+
+\bibitem{UnitMeister}
+Nikolai Tillmann and Wolfram Schulte.
+\newblock Parameterized unit tests with {Unit Meister}.
+\newblock In {\em Proceedings of the 10th European Software Engineering
+  Conference Held Jointly with 13th ACM SIGSOFT International Symposium on
+  Foundations of Software Engineering}, pages 241--244, 2005.
+
+\bibitem{KLEE}
+Cristian Cadar, Daniel Dunbar, and Dawson Engler.
+\newblock {KLEE}: unassisted and automatic generation of high-coverage tests
+  for complex systems programs.
+\newblock In {\em OSDI}, 2008.
+
+\bibitem{testfs}
+Jack Sun, Daniel Fryer, Ashvin Goel, and Angela~Demke Brown.
+\newblock Using declarative invariants for protecting file-system integrity.
+\newblock In {\em Proceedings of the 6th Workshop on Programming Languages and
+  Operating Systems}, page~6. ACM, 2011.
+
+\bibitem{testfsrepo}
+Alex Groce.
+\newblock Test harness for testfs.
+\newblock \url{https://github.com/agroce/testfs}, 2018.
+
+\bibitem{fprime}
+Robert Bocchino, Timothy Canham, Garth Watney, Leonard Reder, and Jeffrey
+  Levison.
+\newblock F prime: An open-source framework for small-scale flight software
+  systems.
+\newblock In {\em Small Satellite Conference}, 2018.
+
+\bibitem{fprimerepo}
+{NASA}.
+\newblock F prime: A flight-proven, multi-platform, open-source flight software
+  framework.
+\newblock \url{https://github.com/nasa/fprime}, 2018.
+
+\bibitem{song2019periscope}
+Dokyung Song, Felicitas Hetzelt, Dipanjan Das, Chad Spensky, Yeoul Na, Stijn
+  Volckaert, Giovanni Vigna, Christopher Kruegel, Jean-Pierre Seifert, and
+  Michael Franz.
+\newblock Periscope: An effective probing and fuzzing framework for the
+  hardware-{OS} boundary.
+\newblock In {\em NDSS}, 2019.
+
+\bibitem{blatter2018static}
+Lionel Blatter, Nikolai Kosmatov, Pascale~Le Gall, Virgile Prevosto, and
+  Guillaume Petiot.
+\newblock Static and dynamic verification of relational properties on
+  self-composed {C} code, 2018.
+
+\bibitem{MetAcsl}
+Virgile Robles, Nikolai Kosmatov, Virgile Prevosto, Louis Rilling, and Pascale
+  Le~Gall.
+\newblock {MetAcsl}: Specification and verification of high-level properties.
+\newblock In Tom{\'a}{\v{s}} Vojnar and Lijun Zhang, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, pages 358--364,
+  Cham, 2019. Springer International Publishing.
+
+\bibitem{halucinator}
+Abraham~A Clements, Eric Gustafson, Tobias Scharnowski, Paul Grosen, David
+  Fritz, Christopher Kruegel, Giovanni Vigna, Saurabh Bagchi, and Mathias
+  Payer.
+\newblock $\{$HALucinator$\}$: Firmware re-hosting through abstraction layer
+  emulation.
+\newblock In {\em 29th USENIX Security Symposium (USENIX Security 20)}, pages
+  1201--1218, 2020.
+
+\bibitem{CFV08}
+Alex Groce, Gerard Holzmann, Rajeev Joshi, and Ru-Gang Xu.
+\newblock Putting flight software through the paces with testing, model
+  checking, and constraint-solving.
+\newblock In {\em Workshop on Constraints in Formal Verification}, pages 1--15,
+  2008.
+
+\bibitem{AMAI}
+Alex Groce, Klaus Havelund, Gerard Holzmann, Rajeev Joshi, and Ru-Gang Xu.
+\newblock Establishing flight software reliability: Testing, model checking,
+  constraint-solving, monitoring and learning.
+\newblock {\em Annals of Mathematics and Artificial Intelligence},
+  70(4):315--349, 2014.
+
+\bibitem{aflfast}
+Marcel B{\"o}hme, Van-Thuan Pham, and Abhik Roychoudhury.
+\newblock Coverage-based greybox fuzzing as {Markov} chain.
+\newblock {\em IEEE Transactions on Software Engineering}, 45(5):489--506,
+  2017.
+
+\bibitem{echidna-advice}
+Trail of~Bits.
+\newblock Fuzzing tips.
+\newblock
+  \url{https://github.com/crytic/building-secure-contracts/blob/master/program-analysis/echidna/fuzzing_tips.md}.
+
+\bibitem{lemieux2018fairfuzz}
+Caroline Lemieux and Koushik Sen.
+\newblock {FairFuzz:} a targeted mutation strategy for increasing greybox fuzz
+  testing coverage.
+\newblock In {\em International Conference on Automated Software Engineering},
+  pages 475--485, 2018.
+
+\bibitem{vuzzer}
+Sanjay Rawat, Vivek Jain, Ashish Kumar, Lucian Cojocar, Cristiano Giuffrida,
+  and Herbert Bos.
+\newblock {VUzzer:} application-aware evolutionary fuzzing.
+\newblock In {\em NDSS (Network and Distributed Security Symposium)}, 2017.
+
+\bibitem{zhao2019send}
+Lei Zhao, Yue Duan, Heng Yin, and Jifeng Xuan.
+\newblock Send hardest problems my way: Probabilistic path prioritization for
+  hybrid fuzzing.
+\newblock In {\em NDSS (Network and Distributed Security Symposium)}, 2019.
+
+\bibitem{aschermann2019redqueen}
+Cornelius Aschermann, Sergej Schumilo, Tim Blazytko, Robert Gawlik, and
+  Thorsten Holz.
+\newblock {REDQUEEN:} fuzzing with input-to-state correspondence.
+\newblock In {\em NDSS (Network and Distributed Security Symposium)}, 2019.
+
+\bibitem{cbmcp}
+Daniel Kroening, Edmund~M. Clarke, and Flavio Lerda.
+\newblock A tool for checking {ANSI-C} programs.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of
+  Systems}, pages 168--176, 2004.
+
+\bibitem{tiemeyer2019crest}
+Andreas Tiemeyer, Tom Melham, Daniel Kroening, and John O'Leary.
+\newblock Crest: Hardware formal verification with ansi-c reference
+  specifications, 2019.
+
+\bibitem{awsmodel}
+Byron Cook, Kareem Khazem, Daniel Kroening, Serdar Tasiran, Michael Tautschnig,
+  and Mark~R Tuttle.
+\newblock Model checking boot code from aws data centers.
+\newblock {\em Formal Methods in System Design}, pages 1--19, 2020.
+
+\bibitem{groce2018verified}
+Alex Groce, Iftekhar Ahmed, Carlos Jensen, Paul~E McKenney, and Josie Holmes.
+\newblock How verified (or tested) is my code? falsification-driven
+  verification and testing.
+\newblock {\em Automated Software Engineering Journal}, 25(4):917--960, 2018.
+
+\bibitem{SPIN}
+Gerard~J. Holzmann.
+\newblock {\em The {SPIN} Model Checker: Primer and Reference Manual}.
+\newblock Addison-Wesley Professional, 2003.
+
+\bibitem{ModelDriven}
+Gerard Holzmann and Rajeev Joshi.
+\newblock Model-driven software verification.
+\newblock In {\em SPIN Workshop on Model Checking of Software}, pages 76--91,
+  2004.
+
+\bibitem{ModelCode}
+Gerard Holzmann, Rajeev Joshi, and Alex Groce.
+\newblock Model driven code checking.
+\newblock {\em Automated Software Engineering}, 15(3--4):283--297, 2008.
+
+\bibitem{WODA08}
+Alex Groce and Rajeev Joshi.
+\newblock Random testing and model checking: Building a common framework for
+  nondeterministic exploration.
+\newblock In {\em Workshop on Dynamic Analysis}, pages 22--28, 2008.
+
+\bibitem{WODACommon}
+Alex Groce and Martin Erwig.
+\newblock Finding common ground: Choose, assert, and assume.
+\newblock In {\em International Workshop on Dynamic Analysis}, pages 12--17,
+  2012.
+
+\bibitem{liva2017extracting}
+Giovanni Liva, Muhammad~Taimoor Khan, and Martin Pinzger.
+\newblock Extracting timed automata from java methods.
+\newblock In {\em 2017 IEEE 17th International Working Conference on Source
+  Code Analysis and Manipulation (SCAM)}, pages 91--100. IEEE, 2017.
+
+\bibitem{mleplussoftware}
+Truong~X. Nghiem.
+\newblock {{MLE}}+: A {{Matlab-EnergyPlus Co-simulation Interface}}.
+\newblock \url{https://github.com/nxtruong/mle-legacy}, July 2022.
+
+\bibitem{bernalMLEToolIntegrated2012a}
+Willy Bernal, Madhur Behl, Truong~X. Nghiem, and Rahul Mangharam.
+\newblock {{MLE}}+: A tool for integrated design and deployment of energy
+  efficient building controls.
+\newblock In {\em Proceedings of the 4th {{ACM Workshop}} on {{Embedded Sensing
+  Systems}} for {{Energy-Efficiency}} in {{Buildings}} ({{BuildSys}}'12)},
+  pages 123--130, {Toronto, Ontario, Canada}, November 2012. {ACM}.
+
+\bibitem{openbuildnetsoftware}
+Truong~X. Nghiem.
+\newblock {{OpenBuildNet Co-Simulation Platform}}.
+\newblock \url{https://github.com/nxt-lab/openBuildNet}, July 2022.
+
+\bibitem{nghiemOpenBuildNetFrameworkDistributed2016}
+Truong~X. Nghiem, Alt{\u u}g Bitlisli{\u o}glu, Tomasz Gorecki, Faran~A.
+  Qureshi, and Colin~N. Jones.
+\newblock {{OpenBuildNet Framework}} for {{Distributed Co-Simulation}} of
+  {{Smart Energy Systems}}.
+\newblock In {\em 2016 14th {{International Conference}} on {{Control}},
+  {{Automation}}, {{Robotics}} and {{Vision}} ({{ICARCV}})}, pages 1--6,
+  November 2016.
+
+\bibitem{multirobot2005}
+W.~{Burgard}, M.~{Moors}, C.~{Stachniss}, and F.~E. {Schneider}.
+\newblock Coordinated multi-robot exploration.
+\newblock {\em IEEE Transactions on Robotics}, 21(3):376--386, June 2005.
+
+\bibitem{multirobotsurvey2013}
+Zhi Yan, Nicolas Jouandeau, and Arab~Ali Cherif.
+\newblock A survey and analysis of multi-robot coordination.
+\newblock {\em International Journal of Advanced Robotic Systems}, 10(12):399,
+  2013.
+
+\bibitem{donze2010robust}
+Alexandre Donz{\'e} and Oded Maler.
+\newblock Robust satisfaction of temporal logic over real-valued signals.
+\newblock In {\em International Conference on Formal Modeling and Analysis of
+  Timed Systems}, pages 92--106. Springer, 2010.
+
+\bibitem{annpureddy2011s}
+Yashwanth Annpureddy, Che Liu, Georgios Fainekos, and Sriram Sankaranarayanan.
+\newblock S-taliro: A tool for temporal logic falsification for hybrid systems.
+\newblock In {\em International Conference on Tools and Algorithms for the
+  Construction and Analysis of Systems}, pages 254--257. Springer, 2011.
+
+\bibitem{ROS}
+Morgan Quigley, Brian Gerkey, Ken Conley, Josh Faust, Tully Foote, Jeremy
+  Leibs, Eric Berger, Rob Wheeler, and Andrew Ng.
+\newblock Ros: an open-source robot operating system.
+\newblock In {\em Proc. of the {IEEE} Intl. Conf. on Robotics and Automation
+  ({ICRA}) Workshop on Open Source Robotics}, Kobe, Japan, May 2009.
+
+\bibitem{FuzzerHicks}
+George Klees, Andrew Ruef, Benji Cooper, Shiyi Wei, and Michael Hicks.
+\newblock Evaluating fuzz testing.
+\newblock {\em arXiv preprint arXiv:1808.09700}, 2018.
+
+\bibitem{WWP2015:PLDI}
+James~R. Wilcox, Doug Woos, Pavel Panchekha, Zachary Tatlock, Xi~Wang,
+  Michael~D. Ernst, and Thomas Anderson.
+\newblock Verdi: A framework for implementing and formally verifying
+  distributed systems.
+\newblock In {\em Proceedings of the 36th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation (PLDI)}, pages 357--368, New York, NY,
+  USA, 2015. ACM.
+
+\bibitem{WWA2016:CPP}
+Doug Woos, James~R. Wilcox, Steve Anton, Zachary Tatlock, Michael~D. Ernst, and
+  Thomas Anderson.
+\newblock Planning for change in a formal verification of the raft consensus
+  protocol.
+\newblock In {\em Proceedings of the 5th ACM SIGPLAN Conference on Certified
+  Programs and Proofs (CPP)}, pages 154--165, New York, NY, USA, 2016. ACM.
+
+\bibitem{DBLP:conf/tacs/Paulin-Mohring01}
+Christine Paulin{-}Mohring.
+\newblock Modelisation of timed automata in coq.
+\newblock In {\em Theoretical Aspects of Computer Software, 4th International
+  Symposium, {TACS} 2001, Sendai, Japan, October 29-31, 2001, Proceedings},
+  volume 2215 of {\em LNCS}, pages 298--315. Springer, 2001.
+
+\bibitem{uppaaltron2008}
+Anders Hessel, Kim Larsen, Marius Mikucionis, Brian Nielsen, Paul Pettersson,
+  and Arne Skou.
+\newblock Testing {Real-Time} systems using {UPPAAL}.
+\newblock In {\em Formal Methods and Testing}, pages 77--117. 2008.
+
+\bibitem{uppaalcover2007}
+Anders Hessel and Paul Pettersson.
+\newblock {CoVer} - a real-time test case generation tool.
+\newblock In {\em 19th IFIP International Conference on Testing of
+  Communicating Systems and 7th International Workshop on Formal Approaches to
+  Testing of Software}, 2007.
+
+\bibitem{uppaaltron2005}
+Kim~G. Larsen, Marius Mikucionis, and Brian Nielsen.
+\newblock Testing real-time embedded software using {UPPAAL-TRON}: an
+  industrial case study.
+\newblock In {\em the 5th ACM international conference on Embedded software},
+  pages 299 -- 306. ACM Press New York, NY, USA, September 18--22 2005.
+
+\bibitem{Guzdial}
+Mark Guzdial.
+\newblock A media computation course for non-majors.
+\newblock In {\em Proceedings of the 8th Annual Conference on Innovation and
+  Technology in Computer Science Education}, ITiCSE '03, pages 104--108, New
+  York, NY, USA, 2003. ACM.
+
+\bibitem{cc2022}
+Alex Groce, Rijnard van Tonder, Goutamkumar~Tulajappa Kalburgi, and Claire~Le
+  Goues.
+\newblock Making no-fuss compiler fuzzing effective.
+\newblock In {\em ACM SIGPLAN International Conference on Compiler
+  Construction}, 2022.
+\newblock accepted for publication.
+
+\bibitem{seip2022}
+Alex Groce, Kush Jain, , Rijnard van Tonder, Goutamkumar~Tulajappa Kalburgi,
+  and Claire~Le Goues.
+\newblock Looking for lacunae in bitcoin core’s fuzzing efforts.
+\newblock In {\em ACM/IEEE International Conference on Software Engineering},
+  2022.
+\newblock accepted for publication.
+
+\bibitem{fuzzing22}
+Alex Groce, Goutamkumar~Tulajappa Kalburgi, Claire~Le Goues, Kush Jain, and
+  Rahul Gopinath.
+\newblock First, fuzz the mutants.
+\newblock In {\em 1st International Fuzzing Workshop}, 2022.
+\newblock accepted for publication.
+
+\end{thebibliography}

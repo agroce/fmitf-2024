@@ -1,0 +1,19 @@
+Ideally, the development of critical embedded systems should rely on a combination of formal methods to achieve an appropriate degree of guarantee:
+automatic static analysis to ensure the absence of some runtime errors,
+deductive verification to prove functional correctness of aspects of the code,
+and runtime verification for parts of the code that cannot be (or are not yet) proved using deductive verification,
+or that generated \emph{warnings} from static analysis requiring confirmation of a problem or refutation of the feasibility of an error.  A core question is how to represent a specification that is intimately tied to real implementation code.  
+
+This project will therefore make use of the ideas developed in the ongoing work on the \framac{}~\cite{KKP2015:FAC} tool as a foundation for a specification and annotation language.
+\framac is a widely-used source code analysis platform that aims at enabling verification of industrial-size programs,
+ and supports combinations of different approaches by providing its users with a collection of \emph{plugins} for analyses.
+Moreover, collaborative verification across cooperating plugins is enabled by their integration on top of a shared kernel, and, most critically for our purposes, their compliance to a common specification language: \acsl~\cite{ACSL}.
+\acsl, the ANSI/ISO C Specification Language, is based on the notion of a contract as in JML~\cite{jml}: \acsl allows users to specify functional properties of programs through pre/post-conditions.
+Many built-in predicates and logic functions are provided, to handle, for example, pointer validity and separation.
+Using \acsl/\framac means that while focusing on dynamic analysis and model checking, our approach automatically provides an additional benefit for embedded systems engineers: access to the current set of powerful \framac static analyses.  \framac provides both abstract interpretation~\cite{cousot77} based analysis plugins and deductive verification plugins based on a weakest precondition calculus; the latter have recently been improved to make proof without interacting with a theorem prover easier for engineers~\cite{BLK2019:NFM}.
+
+\framac was designed as a static analysis platform, but has been extended with limited plugins for dynamic analysis.
+One of these plugins is \eacsl, which supports runtime assertion checking~\cite{CR2006:SEN}.
+In \framac, \eacsl is both the name of the assertion language and the name of a plugin that generates C code to check these assertions at runtime.
+\eacsl is a subset of \acsl.  The plugin \eacsl is used to translate a subset of \framac assertions into executable C code.
+However, the \eacsl plugin does not support all the specification constructs we need, or assist developers in the most difficult part of dynamic analysis:  constructing a set of tests that exercise the checks.  The only assistance provided by \framac for this is very limited in capability.  Rather than ``re-inventing the wheel'' and offering a solution that lacks a strong static aspect we therefore extend \acsl and \eacsl.

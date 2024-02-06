@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%% Intro to the application
+
+\paragraph{Overview:}
+
+Coordinated operation of multiple autonomous robots %(multi-robot systems)
+has many important real-world applications~\cite{multirobot2005,multirobotsurvey2013}, e.g., in rescue, security, or disaster response missions. %, several autonomous aerial robots can coordinate to survey an area, monitor target objects, % or activities,
+%and guide ground robots. % or vehicles.
+In such applications, each robot is autonomous but has the capability to coordinate efficiently and safely with other robots to complete a shared mission, often in a distributed manner. % without any central coordinator.
+Such coordination is essential in real-world applications where the environment is constantly and unexpectedly changing.
+One of the most critical challenges of this application is to guarantee the safety of a coordination plan, which is typically implemented in C code on the embedded computers of the robots and usually involves wireless inter-robot communication, sensing, and actuation.
+The terrestrial robots and aerial drones of the DISCOVER platform will be used for this case study.
+
+
+\paragraph{Challenge:}
+Validation of a distributed coordination method for a multi-robot system is currently performed using a mix of theoretical proof (for limited settings), extensive computer-based simulations, simulation-based falsification techniques, and real-world tests with robots.
+Even when a method is validated by proofs and/or simulations, it often fails in real tests due to discrepancies between models and reality/implementation.
+The methods and tools proposed in this project will help control and robotics researchers, who usually do not have expertise in software verification and testing, overcome this challenge.
+
+
+\paragraph{Plan:}
+First, we will model a coordination plan %/algorithm
+  for multiple robots as a (potentially very complex) network of timed automata.
+  Performance specifications will be expressed in temporal logics, e.g., the Signal Temporal Logic (STL)~\cite{donze2010robust}, and checked against the model using verification and testing tools such as \uppaal or S-TaLiRo~\cite{annpureddy2011s}.
+  While we do not expect actual user code to be accompanied by formal models, in our case study, this step ensures that the original coordination plan has no subtle flaws, and helps us determine properties that need formulation at the implementation level.
+  An implementation of the algorithm in C code, distributed among the robots, will be developed by a robotics/control student.
+  The implementation will be annotated with a specification in our extended \acsl/\eacsl.
+  We will then use DeepState harnesses to generate tests of the implementation components using fuzzing, symbolic execution, and both bounded SAT/SMT based and explicit-state model checking.
+  Finally, we will determine if a timed automata skeleton extracted from the implementation code corresponds to and would help create a full specification such as we developed before beginning implementation.
+  % This case study will be conducted by a robotics/control graduate student in the ICONS Lab, using the software tools developed in this project.
+  The very different nature and complexity of this study, compared to stationary sensor nodes, will ensure that our methods and tools work in a variety of kinds of real systems.
+  % Given the different nature and complexity of this application compared to the SEGA study, the feedback will be much valuable for the development and improvement of the proposed methods and tools for practical usages in a wide spectrum of real systems.
+  To overcome the challenge stemming from the complex physical dynamics and interactions of the robots, we will utilize a sophisticated robot simulation environment, based on the Robot Operating System (ROS) \cite{ROS}, with a rich set of predefined scenarios, developed by the DISCOVER team (specifically by the group of co-PI Nghiem).
+  An interface between the robot simulation software and the tools developed in this project will be created to enable seamless verification and testing of the robotic code.
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

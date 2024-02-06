@@ -1,0 +1,63 @@
+\section{Related Work}
+
+A fundamental goal of this project is to reduce both user effort and
+the opportunity for user effort by allowing minimizing (ideally to
+one) the number of times a user must specify an aspect of system
+correctness.  The principle that important information should have a
+``single point of truth'' is widely accepted in software engineering,
+even in such foundational early advances as avoiding repeated magic
+numbers by the use of named constants.  Such a principle can be
+extended to specification and definition of test harnesses.  Early
+work emphasizing this goal of both reducing work and chance of error
+in specification and test generation included the effort by Groce and
+Joshi to use a single harness for both model-checking and random
+testing, in the verification of the Mars Science Laboratory's file
+system \cite{WODA08,CFV08,AMAI}.  In later work, Groce and Erwig
+extended this idea to propose development of a single language with a
+unified semantics for a wide variety of dynamic test generation tools
+\cite{WODACommon}; this approach is essentially realized in the
+DeepState \cite{DeepState} system.  Indeed, \framac and
+\acsl~\cite{ACSL} and DeepState are both arguably limited
+instantiations of this goal: providing a single language, interface,
+and semantics that is applied to a variety of methods (static or
+dynamic) for checking that a specification holds.  This project aims
+to further extend this goal by extending it to include a formal
+timed-automata model and to connect the primarily static and dynamic approaches.
+
+The implementation and verification of distributed systems,
+and code extraction from automata modeling in the proof assistant
+\Coq~\cite{WWP2015:PLDI,WWA2016:CPP,DBLP:conf/tacs/Paulin-Mohring01}
+is a topic of some previous work.  Such  proposals require that the developers master \Coq, and start from the modeling activity to generate code.
+They are therefore not applicable in the context of the verification
+of legacy embedded C code, the common case in the real world.
+
+Testing real-time systems modeled by networks of timed automata was
+investigated by the authors of the tool \uppaal
+\cite{uppaaltron2008,uppaalcover2007,uppaaltron2005} and implemented
+in the tools \uppaal-TRON
+and
+\uppaal-COVER. These tools generate
+tests, either offline or online, for conformance testing of a
+real-time system with respect to its model and an environment model,
+both as timed automaton networks.  In both cases, the real-time system
+is considered a black-box with an input/output interface through which
+the test generator or monitor can change the system inputs and observe
+the system outputs.  The actual implementation code is not considered
+and is in fact hidden from the testing tools.  While this approach is
+general, it has several drawbacks.  It requires a centralized
+input/output interface accessible to the testing tools.  Such an
+interface is not always available in all systems, especially in
+large-scale distributed systems like the sensor/actuator networks
+considered in our case study.  Furthermore, by considering only the
+(timed) input/output behavior of a system, this approach may not be
+able to test internal system behaviors and therefore miss
+opportunities for a better test
+coverage.
+
+
+
+% ;;; Local Variables: ***
+% ;;; mode: latex ***
+% ;;; eval: (ispell-change-dictionary "english" nil) ***
+% ;;; eval: (flyspell-buffer) ***
+% ;;; End: ***

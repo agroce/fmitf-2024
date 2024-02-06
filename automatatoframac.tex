@@ -1,0 +1,88 @@
+It is notoriously difficult to design correct and secure communication protocols.
+One of the most famous examples is the Needham Schroeder Public Key protocol~\cite{NS1978:CACM}.
+It took 18 years to discover a flaw in this protocol~\cite{LOW1996:TACAS}, and it was done using formal methods.
+Networks of timed automata are formalisms suitable for the formalization of protocols.
+They are the basis of model checkers such as \uppaal~\cite{DLL2015:STTT} and \prism~\cite{KNP2011:CAV} that have been used successfully in the verification of network protocols~\cite{ZBW2013:ENTCS,HMJ2006:MASCOTS,HSS2010:NFM,KPK2015:VECOS}.
+These tools find issues with abstract formulations of protocols, but cannot help with implementation details that not modeled.
+
+But the {\em implementation} details of a correct protocol also matter as the Heartbleed vulnerability in the OpenSSL implementation shows.
+In the case of Heartbleed, the problem was a C runtime error: an access to an invalid memory region, and it was due to an implicit assumption on the input of a function that was actually false.
+Combinations of static and dynamic analyses can detect such vulnerabilities~\cite{KKP2015:HVC} because they are not due to complex interactions related to the protocol.
+
+The methodology we envision combines the use of model-checkers such as \uppaal and \prism for the verification of protocols, with frameworks for static and dynamic analysis of C programs, namely \framac and \deepstate, for the verification of the {\em implementations} of protocols.
+
+We consider \framac, and its specification language \acsl pivotal in this approach.
+The research challenge here is to translate networks of timed automata into \acsl annotations and C ghost code for enabling the verification of the C code implementing the protocol modeled by the timed automata:
+
+\begin{enumerate}[labelsep=3pt,leftmargin=12pt]
+\item The translation of networks of automata into annotations to be used within the \framac code analyzer.
+  Previous work co-authored by  co-PI Loulergue on the Contiki~\cite{DGV2004:LCN} lightweight operating system for the Internet of Things showed that various   approaches can be applied to the verification of the same code.
+  For checking the correctness of the linked list API of Contiki, it includes the use of ghost arrays~\cite{BKL2018:NFM}.
+  Ghost code is a part of a program that is added for the purpose of specification.
+  Such code should not interfere with regular code.
+  Erasing it should make no observable difference in the program results.
+  This approach made it possible to perform most proofs automatically using the \framac/\Wp tool, only a small number of auxiliary lemmas being proved interactively in the \Coq proof assistant
+  (later replaced by so-called lemma functions and loop annotations to avoid the use of \Coq~\cite{BLK2019:NFM}).
+  This work relied on an elegant segment-based reasoning over the companion array developed for the proof.
+  
+  This approach, however, is expressed in parts of the \acsl language that cannot be translated to executable C code, i.e. that do not belong to the \eacsl subset.
+  In a broader verification context, especially as long as the whole system is not yet formally verified, it is very useful to rely on runtime verification, in particular to test client modules that use the list module.
+  A variant of the list module specification~\cite{LBK2018:TAP}  that belongs to the executable subset \eacsl of \acsl can also  be transformed into executable C code.
+  A newer approach~\cite{BKL2019:SAC} relies on logic lists: they are part of the \acsl standard library of inductively defined logical data structures.
+  In the case of Contiki, a logic list provides a convenient high-level view of the linked list.
+  The specifications of all functions is now proved faster and almost automatically.
+  All these approaches are based on a predicate, or a combination of a predicate and a logic function, that relates the data structure (linked list), and a representation of it for specification purposes.
+  Figure~\ref{fig:representation} shows the logic list representation (left) and array representation (right).
+  In the former case, the logic list {\tt ll} represents the linked list from root {\tt bl} to cell {\tt el}.
+  In the latter case, the companion array {\tt cArr} ({\tt n} cells from index {\tt index}) represents the linked list from {\tt root} to cell {\tt bound}.
+
+
+  \begin{figure}
+    \lstinputlisting[basicstyle=\scriptsize\ttfamily,multicols=2]{representation.c}
+    \caption{Linked List Representation in ACSL}
+    \label{fig:representation}
+  \end{figure}
+  
+  We expect several translations of networks of automata to be considered.
+  Some may be easier to understand for C programmers not familiar with formal specifications (ghost code).
+  Some may be more efficient for deductive verification (logical data structures).
+  Some may be more suited for dynamic verification while still being amenable to deductive verification.
+  The first approach will rely on ghost code.
+  The automata will be translated as C code.
+  The states of the model may contain variables: a C structure will be used to represent states.
+  Transitions could be modeled as function calls.
+  Such translations will be implemented as a \framac plugin, and will be automatic.  However events and states of the automata will need to be associated with respectively specific execution events and memory states of the C programs.
+  We expect to experiment manually with this mapping in case studies before enhancing the plugin to provide support for it.
+  In particular this means the developer will have to write representation predicates such as those of Figure~\ref{fig:representation} mapping states of the automata model to more concrete and detailed states of the C programs.
+
+
+\item Although deductive verification about {\em algorithmic complexity} is possible from source code~\cite{WK2009:TYPES,PS2014:SAC,GCP2018:ESOP},
+  such a formal approach is not appropriate for this project, essentially because these approaches deal with complexity rather than execution time, and
+  there is no precise enough translation from one to the other.
+
+  Time constraints on the transitions will be translated into new \acsl annotations.
+  Then we will rely on static analysis tools for worst-case execution time estimation.
+  There are recent projects~\cite{MRP2017:WCET} that explore taking advantage of semantics information to improve WCET estimation, as well as preliminary work showing the benefits of such an approach~\cite{BA2014:JRWRTC}.
+
+  A C program with \acsl annotations very often provides a large variety of semantic information including intervals for variable values, and information about loops such as relations between the number of iterations and other variables.
+  Exploiting this information will require us to be able to modify the WCET tool.
+  This requirement excludes the best WCET estimator, aiT~\cite{FER2004:IPDPS}, a closed source commercial tool.
+  Heptane~\cite{HRP2017:WCET} and {\tt OTAWA}~\cite{BCR2010:SEUS} are two actively developed open source projects with software architectures designed to ease extending the tools.
+  Heptane is focused on cache analysis while {\tt OTAWA} supports more processor architectures.
+  For our case studies, {\tt OTAWA} seems the best alternative for verifying if the bound obtained by WCET estimation on the code indeed satisfies the time constraints obtained for the timed automata.
+
+\item The main part of the code where the specification of the automata will be used should be a kind of event loop.
+  However this loop may be incomplete in the sense that it may not consider all the possible events, or even may not be structured as an event loop in the case   most events are handled through interrupts.
+  Although \framac does not directly handle concurrency, its \conctoseq~\cite{BKL2016:SCAM} plugin (co-authored by co-PI Loulergue) allows for the analysis of parallel compositions of C programs through program transformation to sequential C programs~\cite{BLK2017:VPT}.
+  The main part of the simulating program is a loop that handles control switch among the various threads.
+  This loop can be used as the main event loop in a concurrency context.
+  
+\end{enumerate}
+
+
+
+% ;;; Local Variables: ***
+% ;;; mode: latex ***
+% ;;; eval: (ispell-change-dictionary "english" nil) ***
+% ;;; eval: (flyspell-buffer) ***
+% ;;; End: ***
