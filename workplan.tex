@@ -137,24 +137,24 @@ carry implementation annotations into such formal models.
 
 $\bullet$ T1.2: This task will take feedback from applications of
 tools to generate tests and proofs (T2) into account, to add annotations
-that are focused on heuristic guidance for tools, not correctness per se.
+that are focused on heuristic guidance for testing.
 
 One Ph.D. student will conduct this work, which will last for the
 entire duration of the project.  Because this aspect is directly tied
 to \acsl and \eacsl, and compatibility with Frama-C, we have allocated
-money for travel to France to meet with Frederic Loulergue, a previous
+money for travel to France towards the end of the year to meet with Frederic Loulergue, a previous
 collaborator of the PIs, who has expertise in using Frama-C for 
 Internet of Things applications, and full proof automation in Frama-C.
 
 \paragraph{Evaluation:} Evaluation of
 WP1 will be determined by ability of embedded engineers to agree that
 the key properties, including those related to timed automata models, to be checked are (1) all representable by the
-annotations (2) easy to construct (3) easy to read when produced by others and
-(4) maintainable after introduction.
+annotations (2) easy to construct (3) easy to read and
+(4) maintainable.
 % In addition to our own case studies, discussion with Galois engineers will inform our evaluation.
 
 \paragraph{Work Package 2 (WP2):}  This work package covers
-automatically translation of \acsl/\eacsl-annotated code 
+automatic translation of \acsl/\eacsl-annotated code 
 into a \deepstate test harness (Section~\ref{sec:framac2deepstate}),
 development of back-ends for CBMC and SPIN, and
 improvements to fuzzers:
@@ -163,32 +163,40 @@ improvements to fuzzers:
   execution and fuzzing in DeepState, so that \acsl/\eacsl annotations
   and extensions from WP1 can be used effectively.
 \item T2.2: This task will develop DeepState back-ends for CBMC and
-  SPIN, inform annotations needed to handle loop bounds,
-  memory tracking and matching, and make use of feedback from fuzzing.
+  SPIN, annotations needed to handle loop bounds,
+  memory tracking and matching, and use of feedback from fuzzing.
 \end{itemize}
 
 The execution of this work package will also span the entire duration of the project.
 Because the tasks in this package are also based on developing
 verification and test generation tools (thus formal methods
-expertise), the same Ph.D. student will work on WP1 and WP2.  We
-separate the WPs primarily to emphasize that specification extensions
-and tool support are somewhat orthogonal concerns, and evaluated differently.
+expertise), the same Ph.D. student will work on WP1 and WP2. 
 
 \paragraph{Evaluation:} Evaluation of
 WP2 will be determined by the application
 of DeepState harnesses to generate tests for realistic
 systems.  We will use benchmarks and simple examples to some
 extent, but primarily rely on our connection to case studies.
-For test generation, we will use coverage and faults
-detected as measures~\cite{FuzzerHicks}.  
+We will use coverage and faults
+detected as the standard evaluation  measures.
 
 \paragraph{Work Package 3 (WP3):}
 \textcolor{blue}{%
-This work package will focus on consolidating the software developed in the other work packages in an open-source software tool, usable by embedded software engineers, and on the case studies described in Section~\ref{sec:case-study}, as a way to inform the methodology and tool developments in the other tasks}.
+This work package will focus on consolidating the software developed
+in the other work packages in an open-source software tool, supported
+by pre-trained models tha assist in code annotation, usable by embedded
+software engineers.  These aspects will be evaluated primarily on the case studies described in Section~\ref{sec:case-study}, as a way to inform the methodology and tool developments in the other tasks}.
 WP3 includes the following components:
 \textcolor{blue}{%
-\paragraph{Open-source software tool.}
-Task T3, that develops the open-source software tool, will span the entire duration of the project, in coordination with the software development tasks in the other work packages.  All the students in this project will contribute to task T3.}
+\paragraph{Open-source software tool and annotation assistant.}
+Task T3, that develops the open-source software tool, will span the
+entire duration of the project, in coordination with the software
+development tasks in the other work packages.  All the students in
+this project will contribute to task T3.  A core aspect of the tool
+will be pre-trained models to 1) produce preliminary annotations for C
+code and 2) to complete partial annotations, both as discussed in the
+research plan of this proposal.}
+
 
 \paragraph{Wireless sensor network (WSN) case study on DISCOVER.} This %application
 is divided into two tasks:
@@ -196,8 +204,7 @@ is divided into two tasks:
 \item T4.1: In this task, the %existing SEGA
   wireless sensor node systems will be studied thoroughly to extract the key requirements and characteristics of the embedded system implementations.
   %Timed automaton models of the communication protocol in each system, at different levels of abstraction, may be developed and formally verified in \uppaal and/or \prism, to inform task T1.1.
-  The system information and models resulting from this task will inform the semantics design and method developments in WP1 and WP2.  As time allows, we will extend this work to include sensing
-  elements.
+  The system information and models resulting from this task will inform the semantics design and method developments in WP1 and WP2. 
 \item T4.2: This task will apply the tools developed in WP1 and WP2 to the WSN systems, %in order
   to detect and fix bugs in
   the embedded software implementations. % of the
@@ -246,7 +253,9 @@ or SPIN; (3) coverage and other measures of generated tests; and (4)
 reported usability and value by engineers,
 particularly students.  For T5.3, evaluation will be based on
 comparison of extracted skeletons with independently developed full 
-models.
+models.  Annotation assistance will be evaluated using methods
+described in the main proposal (e.g., ability to partially reconstruct
+erased annotations).
 
 %\subsubsection{Timeline}
 %\label{sec:time-line}
