@@ -41,7 +41,13 @@ has a primitive support for expressing probabilities that we plan to extend.
 
 \subsection{Pre-Trained Models to Provide Annotation Assistance}
 
-NOTE THIS IS NOT YET EDITED TO BE WHAT WE NEED, JUST GRABS REFS
+As noted in the problem statement, while developers are almost all at
+least familiar with writing unit tests, extending this experience to
+annotating embedded code and to writing unit tests \emph{not limited
+  to single concrete values} is a challenge.  While using large
+language models (LLMs) to generate or complete code in critical
+embedded domains is risky, such models do provide a way to support
+developers in testing and verifying their code.
 
 Modern LLMs have been pretrained on millions of source code tokens, thus these models have a strong understanding of code semantics 
 and behavior. This can be seem with CodeBERT~\cite{codebert} embeddings outperforming prior work such as Code2Vec~\cite{code2vec} 
@@ -53,24 +59,38 @@ the test code within these corpuses, making
 models ``aware'' of the tightly constrained nature of test code.
 Thus one can generate entire test suites with a powerful model such as ChatGPT~\cite{gpttestgen, siddiq2023empirical}. 
 Even smaller models, trained with this relationship~\cite{catlm, starcoder} show significant promise, generating tests that compile, execute successfully, and 
-increase coverage.
-
-The context of existing production code gives LLMs more to work with,
+increase coverage.  The context of existing embedded systems code gives LLMs more to work with,
 and the context of existing tests for production code may give LLMs
-even more to work with: LLMs can be used to augment existing tests
+even more to work with: LLMs have already been be used to augment existing tests
 with (better) oracles~\cite{OracleGEN}.  This is a particulary promising
 application, since the tendency of oracle quality to lag behind code coverage
-is an enduring and under-addressed problem in software testing~\cite{MindGap}.
+is an enduring and under-addressed problem in software
+testing~\cite{MindGap}, and one of the problems our proposal targets.
 
-Another critical problem in software testing is that while developers are
-at least familliar with writing unit tests, few have experience in
-writing property-based tests or fuzz-drivers~\cite{goldstein2022some}, a different task
-that is often perceived as very difficult.  Generalizing oracle
+Again, the task most similar to our approach is that of
+writing property-based tests or fuzz-drivers~\cite{goldstein2022some},
+which, while more developer friendly than any other route to formal
+methods application we know if, is sufficiently novel to discourage
+developers in their first uses.  Generalizing oracle
 generation from specific to parameterized unit tests is a potential
 long-term solution to this problem, and there is already work underway
 to generate fuzz drivers using LLMs~\cite{zhang2023understanding},
 including by Google's OSS-Fuzz team, one of the most important
-industrial fuzzing efforts~\cite{ossfuzzllm}.
+industrial fuzzing efforts~\cite{ossfuzzllm}.  PI Groce has recent experience
+using CodeBERT for a different, but related, engineering task
+(predicting the impact of code changes on tests, in particular for
+mutation testing ~\cite{ContextPMT}) and will carry the lessons learned in that work to
+this domain.
+
+We therefore aim to pre-train models (probably based on CodeBERT) both
+for generation of harnesses and code annotations and for use in
+autocompletion of developer-written annotations.  This specialized
+version of the general code-generation task is easier to train and
+evaluate, due to the structural and semantic restrictions of test code
+and specification annotations.  Evaluation of models will be performed
+using both the usual machine-learning methods as in the above
+discussed recent framing work and using the same
+developer/task oriented methods as in our other case-study based work.
 
 \subsection{\textcolor{blue}{Dissemination of Software}}
 \label{sec:software}
@@ -79,7 +99,7 @@ The proposed methods and framework will be incorporated into a usable
 open source tool.
 While individual software components will be developed and evaluated
 in tandem with the research efforts described above, we dedicate a
-task (Task T3 in Section~\ref{sec:workplan}) for consolidating all
+task (Task T3 in the workplan given in the separate Collaboration Plan) for consolidating all
 these components in a practical, user-friendly software tool since
 adoption by real-world users is a primary scientific goal of this project.
 To maximize impact, the software will be made publicly available % on GitHub

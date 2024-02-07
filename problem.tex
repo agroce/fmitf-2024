@@ -51,6 +51,10 @@ We expect developers to learn new tools, but not new programming paradigms or la
 }
 }
 
+\paragraph{Language choice:} A project of limited scope must focus on a single  language for purposes of initial exploration and implementation.  C remains, by far, the predominant language for embedded systems development, and furthermore has the most advanced tool support among widely-used languages.  Essentially all legacy systems in embedded domains are at least largely written in C.  Carrying our approach and results over to C++, Rust or even Python, however, is largely a matter of adapting to underlying tool changes.
+
+\paragraph{Annotation assistance:}  Even when application of formal methods is introduced via the developer-friendly route of (generalized/parameterized) unit tests, writing annotations for code may be a serious burden for developers new to more aggressive testing methods.  We therefore plan to provide developers with tools to assist in writing annotations, based on recent work using large language models to help produce tests, oracles, and fuzzing harnesses, the most similar tasks in current development/testing methods.
+
 \paragraph{Case study applications:}
 \label{sec:field-applications}
 The proposed research is motivated by applications in embedded and networked systems, in particular wireless sensor networks and multi-robot systems.

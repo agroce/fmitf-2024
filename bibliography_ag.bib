@@ -5588,3 +5588,181 @@ month={Oct},}
 	Publisher = {The University of Arizona Press},
 	Title = {{WiSARDNet} Field-to-Desktop: Building a Wireless Cyberinfrastructure for Environmental Monitoring},
 	Year = 2010}
+
+
+@inproceedings{ContextPMT,
+author = {Jain, Kush and Alon, Uri and Groce, Alex and Le Goues, Claire},
+title = {Contextual Predictive Mutation Testing},
+year = {2023},
+isbn = {9798400703270},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3611643.3616289},
+doi = {10.1145/3611643.3616289},
+abstract = {Mutation testing is a powerful technique for assessing and improving test suite quality that artificially introduces bugs and checks whether the test suites catch them. However, it is also computationally expensive and thus does not scale to large systems and projects. One promising recent approach to tackling this scalability problem uses machine learning to predict whether the tests will detect the synthetic bugs, without actually running those tests. However, existing predictive mutation testing approaches still misclassify 33\% of detection outcomes on a randomly sampled set of mutant-test suite pairs. We introduce MutationBERT, an approach for predictive mutation testing that simultaneously encodes the source method mutation and test method, capturing key context in the input representation. Thanks to its higher precision, MutationBERT saves 33\% of the time spent by a prior approach on checking/verifying live mutants. MutationBERT, also outperforms the state-of-the-art in both same project and cross project settings, with meaningful improvements in precision, recall, and F1 score. We validate our input representation, and aggregation approaches for lifting predictions from the test matrix level to the test suite level, finding similar improvements in performance. MutationBERT not only enhances the state-of-the-art in predictive mutation testing, but also presents practical benefits for real-world applications, both in saving developer time and finding hard to detect mutants that prior approaches do not.},
+booktitle = {Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+pages = {250–261},
+numpages = {12},
+keywords = {mutation analysis, code coverage, test oracles},
+location = {, San Francisco, CA, USA, },
+series = {ESEC/FSE 2023}
+}
+
+@inproceedings{OracleGEN,
+  author       = {Elizabeth Dinella and
+                  Gabriel Ryan and
+                  Todd Mytkowicz and
+                  Shuvendu K. Lahiri},
+  title        = {{TOGA:} {A} Neural Method for Test Oracle Generation},
+  booktitle    = {44th {IEEE/ACM} 44th International Conference on Software Engineering,
+                  {ICSE} 2022, Pittsburgh, PA, USA, May 25-27, 2022},
+  pages        = {2130--2141},
+  publisher    = {{ACM}},
+  year         = {2022},
+  url          = {https://doi.org/10.1145/3510003.3510141},
+  doi          = {10.1145/3510003.3510141},
+  timestamp    = {Mon, 18 Jul 2022 16:47:42 +0200},
+  biburl       = {https://dblp.org/rec/conf/icse/DinellaRML22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{zhang2023understanding,
+      title={Understanding Large Language Model Based Fuzz Driver Generation}, 
+      author={Cen Zhang and Mingqiang Bai and Yaowen Zheng and Yeting Li and Xiaofei Xie and Yuekang Li and Wei Ma and Limin Sun and Yang Liu},
+      year={2023},
+      eprint={2307.12469},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}
+
+
+@INPROCEEDINGS{MindGap,
+  author={Jain, Kush and Kalburgi, Goutamkumar Tulajappa and Le Goues, Claire and Groce, Alex},
+  booktitle={2023 IEEE 34th International Symposium on Software Reliability Engineering (ISSRE)}, 
+  title={Mind the Gap: The Difference Between Coverage and Mutation Score Can Guide Testing Efforts}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={102-113},
+  doi={10.1109/ISSRE59848.2023.00036}}
+
+
+@inproceedings{goldstein2022some,
+  title={Some Problems with Properties},
+  author={Goldstein, Harrison and Cutler, Joseph W and Stein, Adam and Pierce, Benjamin C and Head, Andrew},
+  booktitle={Proc. Workshop on the Human Aspects of Types and Reasoning Assistants (HATRA)},
+  year={2022}
+}
+
+
+@misc{ossfuzzllm,
+  title={{AI}-Powered Fuzzing: Breaking the Bug Hunting Barrier},
+  howpublished={\url{https://security.googleblog.com/2023/08/ai-powered-fuzzing-breaking-bug-hunting.html}},
+  author={Dongge Liu and Jonathan Metzman and Oliver Chang and Google Open Source Security Team 
+}
+  }
+
+@misc{gpttestgen,
+      title={No More Manual Tests? Evaluating and Improving ChatGPT for Unit Test Generation}, 
+      author={Zhiqiang Yuan and Yiling Lou and Mingwei Liu and Shiji Ding and Kaixin Wang and Yixuan Chen and Xin Peng},
+      year={2023},
+      eprint={2305.04207},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
+
+@misc{siddiq2023empirical,
+      title={An Empirical Study of Using Large Language Models for Unit Test Generation}, 
+      author={Mohammed Latif Siddiq and Joanna C. S. Santos and Ridwanul Hasan Tanvir and Noshin Ulfat and Fahmid Al Rifat and Vinicius Carvalho Lopes},
+      year={2023},
+      eprint={2305.00418},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
+
+@misc{starcoder,
+      title={StarCoder: may the source be with you!}, 
+      author={Raymond Li and Loubna Ben Allal and Yangtian Zi and Niklas Muennighoff and Denis Kocetkov and Chenghao Mou and Marc Marone and Christopher Akiki and Jia Li and Jenny Chim and Qian Liu and Evgenii Zheltonozhskii and Terry Yue Zhuo and Thomas Wang and Olivier Dehaene and Mishig Davaadorj and Joel Lamy-Poirier and João Monteiro and Oleh Shliazhko and Nicolas Gontier and Nicholas Meade and Armel Zebaze and Ming-Ho Yee and Logesh Kumar Umapathi and Jian Zhu and Benjamin Lipkin and Muhtasham Oblokulov and Zhiruo Wang and Rudra Murthy and Jason Stillerman and Siva Sankalp Patel and Dmitry Abulkhanov and Marco Zocca and Manan Dey and Zhihan Zhang and Nour Fahmy and Urvashi Bhattacharyya and Wenhao Yu and Swayam Singh and Sasha Luccioni and Paulo Villegas and Maxim Kunakov and Fedor Zhdanov and Manuel Romero and Tony Lee and Nadav Timor and Jennifer Ding and Claire Schlesinger and Hailey Schoelkopf and Jan Ebert and Tri Dao and Mayank Mishra and Alex Gu and Jennifer Robinson and Carolyn Jane Anderson and Brendan Dolan-Gavitt and Danish Contractor and Siva Reddy and Daniel Fried and Dzmitry Bahdanau and Yacine Jernite and Carlos Muñoz Ferrandis and Sean Hughes and Thomas Wolf and Arjun Guha and Leandro von Werra and Harm de Vries},
+      year={2023},
+      eprint={2305.06161},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+
+@misc{CodeBERTScore,
+      title={CodeBERTScore: Evaluating Code Generation with Pretrained Models of Code}, 
+      author={Shuyan Zhou and Uri Alon and Sumit Agarwal and Graham Neubig},
+      year={2023},
+      eprint={2302.05527},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
+
+@article{codebert,
+  author       = {Zhangyin Feng and
+                  Daya Guo and
+                  Duyu Tang and
+                  Nan Duan and
+                  Xiaocheng Feng and
+                  Ming Gong and
+                  Linjun Shou and
+                  Bing Qin and
+                  Ting Liu and
+                  Daxin Jiang and
+                  Ming Zhou},
+  title        = {CodeBERT: {A} Pre-Trained Model for Programming and Natural Languages},
+  journal      = {CoRR},
+  volume       = {abs/2002.08155},
+  year         = {2020},
+  url          = {https://arxiv.org/abs/2002.08155},
+  eprinttype    = {arXiv},
+  eprint       = {2002.08155},
+  timestamp    = {Thu, 18 Jun 2020 10:52:55 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2002-08155.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{code2vec,
+  author       = {Uri Alon and
+                  Meital Zilberstein and
+                  Omer Levy and
+                  Eran Yahav},
+  title        = {code2vec: Learning Distributed Representations of Code},
+  journal      = {CoRR},
+  volume       = {abs/1803.09473},
+  year         = {2018},
+  url          = {http://arxiv.org/abs/1803.09473},
+  eprinttype    = {arXiv},
+  eprint       = {1803.09473},
+  timestamp    = {Sat, 23 Jan 2021 01:13:47 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1803-09473.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{tfidf,
+  abstract = {The exhaustivity of document descriptions and the specificity of index terms are usually regarded as independent. It is suggested that specificity should be interpreted statistically, as a function of term use rather than of term meaning. The effects on retrieval of variations in term specificity are examined, experi-ments with three test collections showing in particular that frequently-occurr-ing terms are required for good overall performance. It is argued that terms should be weighted  according to  collection  frequency,  so that  matches on less  frequent,  more  specific,  terms  are  of  greater  value  than  matches  on  frequent  terms. Results for  the  test  collections  show  that  considerable im-provements in performance  are obtained with  this very simple procedure.},
+  added-at = {2019-05-21T15:25:32.000+0200},
+  author = {Sparck Jones, Karen},
+  biburl = {https://www.bibsonomy.org/bibtex/25a4ce4a29250ab2ddf0c00299373c2d4/lepsky},
+  file = {Jones - A STATISTICAL INTERPRETATION OF TERM SPECIFICITY A.pdf:C\:\\Users\\klaus\\Zotero\\storage\\RQVS66L7\\Jones - A STATISTICAL INTERPRETATION OF TERM SPECIFICITY A.pdf:application/pdf},
+  interhash = {2a28033388d8c3bd9d8bcf8dabee7cf9},
+  intrahash = {5a4ce4a29250ab2ddf0c00299373c2d4},
+  journal = {Journal of documentation},
+  keywords = {termspezifitaet},
+  language = {en},
+  number = 1,
+  pages = {11--21},
+  timestamp = {2019-05-21T15:25:32.000+0200},
+  title = {A statistical interpretation of term specificity and its application in retrieval},
+  volume = 28,
+  year = 1972
+}
+
+@misc{catlm,
+      title={CAT-LM: Training Language Models on Aligned Code And Tests}, 
+      author={Nikitha Rao and Kush Jain and Uri Alon and Claire Le Goues and Vincent J. Hellendoorn},
+      year={2023},
+      eprint={2310.01602},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
