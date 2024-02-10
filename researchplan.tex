@@ -50,7 +50,7 @@ embedded domains is risky, such models do provide a way to support
 developers in testing and verifying their code.
 
 Modern LLMs have been pretrained on millions of source code tokens, thus these models have a strong understanding of code semantics 
-and behavior. This can be seem with CodeBERT~\cite{codebert} embeddings outperforming prior work such as Code2Vec~\cite{code2vec} 
+and behavior. This can be seen with CodeBERT~\cite{codebert} embeddings outperforming prior work such as Code2Vec~\cite{code2vec} 
 and TF-IDF~\cite{tfidf}, with the CodeBERT vectors capturing some
 notion of semantic similarity rather than pure token match (as in techniques 
 such as TF-IDF).  These training bases contain a large number of
@@ -61,7 +61,7 @@ Thus one can generate entire test suites with a powerful model such as ChatGPT~\
 Even smaller models, trained with this relationship~\cite{catlm, starcoder} show significant promise, generating tests that compile, execute successfully, and 
 increase coverage.  The context of existing embedded systems code gives LLMs more to work with,
 and the context of existing tests for production code may give LLMs
-even more to work with: LLMs have already been be used to augment existing tests
+even more to work with: LLMs have already been used to augment existing tests
 with (better) oracles~\cite{OracleGEN}.  This is a particulary promising
 application, since the tendency of oracle quality to lag behind code coverage
 is an enduring and under-addressed problem in software
@@ -70,7 +70,7 @@ testing~\cite{MindGap}, and one of the problems our proposal targets.
 Again, the task most similar to our approach is that of
 writing property-based tests or fuzz-drivers~\cite{goldstein2022some},
 which, while more developer friendly than any other route to formal
-methods application we know if, is sufficiently novel to discourage
+methods application we know of, is sufficiently novel to discourage
 developers in their first uses.  Generalizing oracle
 generation from specific to parameterized unit tests is a potential
 long-term solution to this problem, and there is already work underway
